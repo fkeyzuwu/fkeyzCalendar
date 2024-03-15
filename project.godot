@@ -25,6 +25,11 @@ window/size/mode=3
 
 project/assembly_name="fkeyzCalendar"
 
+[gui]
+
+theme/custom="res://default_theme.tres"
+theme/custom_font="res://fonts/Roboto-Regular.ttf"
+
 [input]
 
 quit={
@@ -42,6 +47,17 @@ zoom_out_vertical={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"button_mask":16,"position":Vector2(171, 15),"global_position":Vector2(860, 364),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+right_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(136, 7),"global_position":Vector2(825, 356),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_1="DayContainer"
+2d_physics/layer_2="EventContainer"
+2d_physics/layer_3="Mouse"
 
 [rendering]
 

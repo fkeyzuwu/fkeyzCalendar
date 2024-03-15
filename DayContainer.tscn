@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://DayContainer.cs" id="1_43ptj"]
 [ext_resource type="PackedScene" uid="uid://bunxdhstox7io" path="res://EventContainer.tscn" id="2_75q0w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk0bq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbj6n"]
 size = Vector2(36.91, 30.265)
 
 [node name="DayContainer" type="ColorRect" node_paths=PackedStringArray("area", "collisionShape2D", "eventContainersContainer")]
@@ -48,4 +48,4 @@ position = Vector2(18.455, 15.1325)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_pk0bq")
+shape = SubResource("RectangleShape2D_pbj6n")

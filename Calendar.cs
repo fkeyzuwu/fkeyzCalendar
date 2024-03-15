@@ -17,14 +17,14 @@ public partial class Calendar : Control
         }
     }
 
-    public override void _Input(InputEvent input_event) 
+    public override void _Input(InputEvent inputEvent) 
     {
-        if (input_event.IsActionPressed("quit")) GetTree().Quit();
-        else if (input_event.IsAction("zoom_in_vertical"))
+        if (inputEvent.IsActionPressed("quit")) GetTree().Quit();
+        else if (inputEvent.IsAction("zoom_in_vertical"))
         {
             currentHoveredDay?.ZoomIn();
         }
-        else if (input_event.IsAction("zoom_out_vertical"))
+        else if (inputEvent.IsAction("zoom_out_vertical"))
         {
             currentHoveredDay?.ZoomOut();
         }

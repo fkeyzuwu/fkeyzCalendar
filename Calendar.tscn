@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Calendar.cs" id="1_n8f5r"]
 [ext_resource type="PackedScene" uid="uid://duh5cgtltt5fx" path="res://DayContainer.tscn" id="2_ucobn"]
-[ext_resource type="PackedScene" uid="uid://780r3it0lmej" path="res://mouse.tscn" id="3_7ye87"]
+[ext_resource type="PackedScene" uid="uid://780r3it0lmej" path="res://Mouse.tscn" id="3_7ye87"]
 
 [node name="Calendar" type="Control" node_paths=PackedStringArray("daysContainer")]
 layout_mode = 3
@@ -24,4 +24,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Mouse" parent="." instance=ExtResource("3_7ye87")]
-position = Vector2(1769.08, -488.17)
+position = Vector2(-317.409, -333.154)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cf06uoxm7w3b1"]
+
+[node name="EventColorPicker" type="ColorPicker"]
+offset_left = -132.0
+offset_top = -128.0
+offset_right = 166.0
+offset_bottom = 144.0
+edit_alpha = false
+picker_shape = 4
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false

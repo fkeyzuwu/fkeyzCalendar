@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bunxdhstox7io"]
+[gd_scene load_steps=4 format=3 uid="uid://bunxdhstox7io"]
 
 [ext_resource type="Script" path="res://EventContainer.cs" id="1_06yt7"]
+[ext_resource type="FontFile" uid="uid://dbf68r7geh5ls" path="res://fonts/Roboto-Regular.ttf" id="2_iomlx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gysxq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6xm2"]
 size = Vector2(81, 38)
 
-[node name="EventContainer" type="ColorRect" node_paths=PackedStringArray("area", "collisionShape2D")]
+[node name="EventContainer" type="ColorRect" node_paths=PackedStringArray("info", "area", "collisionShape2D")]
 custom_minimum_size = Vector2(20, 38)
 offset_right = 81.0
 offset_bottom = 38.0
 size_flags_vertical = 3
 color = Color(0.243137, 1, 1, 1)
 script = ExtResource("1_06yt7")
+info = NodePath("Info")
 area = NodePath("Area2D")
 collisionShape2D = NodePath("Area2D/CollisionShape2D")
 
@@ -21,4 +23,21 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_gysxq")
+shape = SubResource("RectangleShape2D_d6xm2")
+
+[node name="Info" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/background_color = Color(0.168627, 0.580392, 0.619608, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_iomlx")
+theme_override_font_sizes/font_size = 16
+context_menu_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_mouse_area_entered"]
