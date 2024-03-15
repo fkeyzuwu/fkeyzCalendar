@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://780r3it0lmej"]
+
+[ext_resource type="Script" path="res://Mouse.cs" id="1_kk2vb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0f2ph"]
+
+[node name="Mouse" type="Node2D"]
+position = Vector2(175, -163)
+script = ExtResource("1_kk2vb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0f2ph")

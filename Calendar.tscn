@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bodnda514d6b4"]
+
+[ext_resource type="Script" path="res://Calendar.cs" id="1_n8f5r"]
+[ext_resource type="PackedScene" uid="uid://duh5cgtltt5fx" path="res://DayContainer.tscn" id="2_ucobn"]
+[ext_resource type="PackedScene" uid="uid://780r3it0lmej" path="res://mouse.tscn" id="3_7ye87"]
+
+[node name="Calendar" type="Control" node_paths=PackedStringArray("daysContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n8f5r")
+daysContainer = NodePath("DaysContainer")
+dayContainerScene = ExtResource("2_ucobn")
+
+[node name="DaysContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mouse" parent="." instance=ExtResource("3_7ye87")]
+position = Vector2(1769.08, -488.17)
