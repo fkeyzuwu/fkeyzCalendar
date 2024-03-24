@@ -28,11 +28,6 @@ public partial class DayContainer : ColorRect
     {
         collisionShape2D.Shape = new RectangleShape2D();
         collisionShape = collisionShape2D.Shape as RectangleShape2D;
-
-        for (int i = 0; i < 24; i++)
-        {
-            eventContainers.Add(CreateEventContainer());
-        }
     }
     public override void _Process(double delta)
     {
@@ -40,10 +35,11 @@ public partial class DayContainer : ColorRect
         collisionShape.Size = Size;
     }
 
-    private EventContainer CreateEventContainer()
+    private EventContainer CreateEventContainer(DayEvent dayEvent)
     {
         EventContainer container = eventContainerScene.Instantiate() as EventContainer;
         eventContainersContainer.AddChild(container);
+        container.SetEvent(dayEvent);
         return container;
     }
 
@@ -68,6 +64,14 @@ public partial class DayContainer : ColorRect
             container.CustomMinimumSize = new Vector2(
                 container.CustomMinimumSize.X,
                 EventContainer.baseMinimumHeight * zoomScale);
+        }
+    }
+
+    public void Populate(DayData dayData)
+    {
+        for (int i = 0; i < dayData.dayEvents.Count; i++)
+        {
+            eventContainers.Add(CreateEventContainer(dayData.dayEvents[i]));
         }
     }
 }

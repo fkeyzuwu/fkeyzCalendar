@@ -1,4 +1,7 @@
 using Godot;
+using Godot.Collections;
+using System;
+using System.Runtime.CompilerServices;
 
 public partial class Calendar : Control
 {
@@ -9,12 +12,15 @@ public partial class Calendar : Control
     [Export] private PackedScene dayContainerScene;
 
     private DayContainer currentHoveredDay;
+    private Array<DayContainer> dayContainers = new Array<DayContainer>();
     public override void _Ready()
     {
         for(int i = 0; i < 7; i++)
         {
-            CreateDayContainer();
+            dayContainers.Add(CreateDayContainer());
         }
+
+        PopulateDayContainers();
     }
 
     public override void _Input(InputEvent inputEvent) 
@@ -37,6 +43,23 @@ public partial class Calendar : Control
         dayContainer.area.AreaEntered += (Area2D area) => _OnDayContainerMouseEntered(dayContainer);
         dayContainer.area.AreaExited += (Area2D area) => _OnDayContainerMouseExited(dayContainer);
         return dayContainer;
+    }
+
+    private void PopulateDayContainers()
+    {
+        var today = DateTime.Today;
+        for (int i = dayContainers.Count - 1; i >= 0; i--)
+        {
+            var dayContainer = dayContainers[i];
+            DayData dayData = GetDateData(today.AddDays(i));
+            dayContainer.Populate(dayData);
+        }
+    }
+
+    private DayData GetDateData(DateTime date)
+    {
+        var dayData = GD.Load<DayData>(date.ToString());
+        return dayData;
     }
 
     private void _OnDayContainerMouseEntered(DayContainer container)

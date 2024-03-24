@@ -12,10 +12,17 @@ public partial class EventContainer : ColorRect
 
     private static EventContainer playerHover = null;
     private bool pickingColor = false;
+
+    public DayEvent DayEvent;
     public override void _Ready()
     {
         collisionShape2D.Shape = new RectangleShape2D();
         collisionShape = collisionShape2D.Shape as RectangleShape2D;
+    }
+
+    public void SetEvent(DayEvent dayEvent)
+    {
+        DayEvent = dayEvent;
     }
 
     public override void _Input(InputEvent inputEvent)

@@ -22,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 2
 
 [node name="Mouse" parent="." instance=ExtResource("3_7ye87")]
-position = Vector2(-317.409, -333.154)
+position = Vector2(3650.46, -1117.1)
